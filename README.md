@@ -3,6 +3,7 @@ Tenth assignment submitted via Blackboard
 
 ## Example Output
 ```
+$ dotnet bin/Debug/netcoreapp2.1/Depreciation.dll
         Depreciation
         Calculate depreciation of a car
         Matthew Obert
@@ -30,5 +31,6 @@ Enter car value: 12000
         Year 3 value $7,369.50
         Year 4 value $6,264.08
         Year 5 value $5,324.46
-Enter car or -99 to quit:
+Enter car or -99 to quit: -99
+
 ```
