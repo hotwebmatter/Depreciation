@@ -16,15 +16,36 @@ namespace Depreciation
     {
         static void Main(string[] args)
         {
+            string inputValue = string.Empty;
+            double number;
             WriteLine(GenerateHeader());
-            Vehicle aCar = new Vehicle("mustang", 25000);
-            WriteLine("Model of car is {0}", aCar.Name);
-            WriteLine("Value of car is {0:c}", aCar.Worth);
-            aCar.CalculateDepreciation();
-            WriteLine("New value of car is {0:c}", aCar.Worth);
+            Vehicle aCar = new Vehicle();
+            Write("Enter car or -99 to quit: ");
+            while (inputValue != "-99")
+            {
+                aCar.Name = inputValue;
+                // Set up the nested loop with prime read
+                // It's OK to reuse the inputValue string
+                Write("Enter car value: ");
+                inputValue = ReadLine();
+                while (double.TryParse(inputValue, out number) == false)
+                {
+                    // Invalid Input
+                    Write("Invalid input. Enter car value: ");
+                    inputValue = ReadLine();
+                }
+                aCar.Worth = number;
+
+                // set up the for loop
+                for (int i = 0; i < 5; i++)
+                {
+                    aCar.CalculateDepreciation();
+                    WriteLine("\tYear {0} value {1:c}\n", i + 1, aCar.Worth);
+                }
+            }
         }
 
-        static string GenerateHeader()
+        private static string GenerateHeader()
         {
             string result = string.Format("\tDepreciation\n");
             result += string.Format("\tCalculate depreciation of a car\n");
@@ -37,6 +58,5 @@ namespace Depreciation
             result += string.Format("**************************************************\n");
             return result;
         }
-
     }
 }
