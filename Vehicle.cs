@@ -31,5 +31,10 @@ namespace Depreciation
         {
             set { worth = value; }
         }
+
+        private static double calculateDepreciation()
+        {
+            worth = worth - (worth * DEPRECIATION_RATE);
+        }
     }
 }
