@@ -16,11 +16,12 @@ namespace Depreciation
     {
         static void Main(string[] args)
         {
-            string inputValue = string.Empty;
+            string inputValue;
             double number;
             WriteLine(GenerateHeader());
             Vehicle aCar = new Vehicle();
             Write("Enter car or -99 to quit: ");
+            inputValue = ReadLine();
             while (inputValue != "-99")
             {
                 aCar.Name = inputValue;
