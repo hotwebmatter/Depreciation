@@ -16,17 +16,17 @@ namespace Depreciation
     {
         static void Main(string[] args)
         {
+            string inputModel;
             string inputValue;
             double number;
             WriteLine(GenerateHeader());
             Vehicle aCar = new Vehicle();
             Write("Enter car or -99 to quit: ");
-            inputValue = ReadLine();
-            while (inputValue != "-99")
+            inputModel = ReadLine();
+            while (inputModel != "-99")
             {
-                aCar.Name = inputValue;
+                aCar.Name = inputModel;
                 // Set up the nested loop with prime read
-                // It's OK to reuse the inputValue string
                 Write("Enter car value: ");
                 inputValue = ReadLine();
                 while (double.TryParse(inputValue, out number) == false)
@@ -36,13 +36,14 @@ namespace Depreciation
                     inputValue = ReadLine();
                 }
                 aCar.Worth = number;
-
-                // set up the for loop
+                // set up the for loop, counting from 0
                 for (int i = 0; i < 5; i++)
                 {
                     aCar.CalculateDepreciation();
-                    WriteLine("\tYear {0} value {1:c}\n", i + 1, aCar.Worth);
+                    WriteLine("\tYear {0} value {1:c}", i + 1, aCar.Worth);
                 }
+                Write("Enter car or -99 to quit: ");
+                inputModel = ReadLine();
             }
         }
 
