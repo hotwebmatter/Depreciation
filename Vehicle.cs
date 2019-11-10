@@ -21,20 +21,22 @@ namespace Depreciation
             worth = carValue;
         }
 
-        // properties only receiving the data
+        // properties with mutators and accessors
         public string Name
         {
             set { name = value; }
+            get { return name; }
         }
 
         public double Worth
         {
             set { worth = value; }
+            get { return worth; }
         }
 
-        private static double calculateDepreciation()
+        public void CalculateDepreciation()
         {
-            worth = worth - (worth * DEPRECIATION_RATE);
+            worth = worth * (1 - DEPRECIATION_RATE);
         }
     }
 }
