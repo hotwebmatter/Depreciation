@@ -20,5 +20,16 @@ namespace Depreciation
             name = carName;
             worth = carValue;
         }
+
+        // properties only receiving the data
+        public string Name
+        {
+            set { name = value; }
+        }
+
+        public double Worth
+        {
+            set { worth = value; }
+        }
     }
 }
