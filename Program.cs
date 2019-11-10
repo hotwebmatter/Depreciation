@@ -3,11 +3,12 @@
  * ##    Programming Assignment #10                    ##
  * ##    Developer: Matthew Obert                      ##
  * ##    Date Submitted: November 10 2019              ##
- * ##    Purpose: Deonstrate usage of for loops        ##
+ * ##    Purpose: Demonstrate usage of for loops       ##
  * ######################################################
  */
  
 using System;
+using static System.Console;
 
 namespace Depreciation
 {
